@@ -1,0 +1,20 @@
+<div class="show">
+  <h3> <%= @restaurant.name %> </h3>
+  <br>
+  <h5> Address: </h5>
+  <p class="info"> <%= @restaurant.address%> </p>
+  <br>
+  <h5> Category: </h5>
+  <p class="info"> <%= @restaurant.category.capitalize%> </p>
+  <br>
+  <%= link_to "Create review", new_restaurant_review_path(@restaurant), clas="btn btn-outline-primary" %>
+  <br>
+  <h5> Reviews: </h5>
+    <% @restaurant.reviews.each do |review| %>
+    <div class="raiting">
+      <h6> Content: <%= review.content %> </h6>
+      <h6> Raiting: <%= review.raiting %> ⭐ </h6>
+    </div>
+    <% end %>
+  <br>
+</div>
